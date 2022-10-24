@@ -4,7 +4,7 @@
              xmlns:c="clr-namespace:XamarinCustomRenderer.Controls"
              x:Class="MauiCustomRenderer.MainPage">
 
-    <Grid BackgroundColor="#f1f1f1">
+    <Grid BackgroundColor="#f1f1f1" RowDefinitions="Auto,*,Auto" Grid.Row="0">
         <c:PressableView Pressed="Handle_Pressed"
                          Released="Handle_Released"
                          HorizontalOptions="Center"
@@ -24,6 +24,18 @@
                 </Grid>
             
         </c:PressableView>
+        <c:AdvancedFrame x:Name="BackgroundFrame" Grid.Row="1"
+                                  Padding="0"
+                                  Background="{Binding Background, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                                  BackgroundColor="Red"
+                                  CornerRadius="{Binding CornerRadius, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                                  HasShadow="False"
+                                  HeightRequest="100"
+                                  HorizontalOptions="Center"
+                                  IsClippedToBounds="True"
+                                  VerticalOptions="Start"
+                                  WidthRequest="100">
+        </c:AdvancedFrame>
     </Grid>
 
 </ContentPage>

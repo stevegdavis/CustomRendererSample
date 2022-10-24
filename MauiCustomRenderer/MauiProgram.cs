@@ -19,10 +19,12 @@ public static MauiApp CreateMauiApp()
         .ConfigureMauiHandlers((handlers) =>{
 #if ANDROID
 			handlers.AddHandler(typeof(PressableView),typeof(XamarinCustomRenderer.Droid.Renderers.PressableViewRenderer));
+            handlers.AddHandler(typeof(AdvancedFrame), typeof(XamarinCustomRenderer.Droid.Renderers.AdvancedFrameRenderer));
 #endif
 
 #if IOS
             handlers.AddHandler(typeof(PressableView), typeof(XamarinCustomRenderer.iOS.Renderers.PressableViewRenderer));
+			handlers.AddHandler(typeof(AdvancedFrame), typeof(XamarinCustomRenderer.iOS.Renderers.AdvancedFrameRenderer));
 #endif
         });
 
